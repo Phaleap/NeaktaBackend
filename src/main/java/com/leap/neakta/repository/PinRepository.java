@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.UUID;
 
 public interface PinRepository extends JpaRepository<Pin, UUID> {
-    List<Pin> findByProvincedId(Integer provincedId);
-    List<Pin> findByCategoryId(Integer categoryId);
-    List<Pin> findByUserId(UUID userId);
+    List<Pin> findByProvince_Id(Integer provinceId);  // ← use underscore
+    List<Pin> findByCategory_Id(Integer categoryId);
+    List<Pin> findByUser_Id(UUID userId);
     List<Pin> findByStatus(String status);
 
     @Query("SELECT p FROM Pin p WHERE p.status = 'ACTIVE' ORDER BY p.score DESC")
