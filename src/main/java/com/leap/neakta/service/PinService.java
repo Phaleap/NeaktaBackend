@@ -54,7 +54,7 @@ public class PinService {
         return toResponse(pin);
     }
     public List<PinResponse> getPinsByProvince(Integer provinceId){
-        return pinRepository.findByProvincedId(provinceId).stream().map(this::toResponse).collect(Collectors.toList());
+        return pinRepository.findByProvince_Id(provinceId).stream().map(this::toResponse).collect(Collectors.toList());
     }
     public PinResponse updatePin(UUID id, PinRequest request){
         Pin pin = pinRepository.findById(id).orElseThrow(() -> new RuntimeException("Pin not found"));
